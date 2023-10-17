@@ -16,5 +16,9 @@
 
 <h2>Filmografia</h2>
 <ul>
-
+  <% @movies.each do |movie| %>
+    <li>
+      <%= link_to("#{movie.title} (#{movie.year})", movie_path(movie)) %>
+    </li>
+  <% end %>
 </ul>

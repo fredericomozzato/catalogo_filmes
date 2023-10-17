@@ -24,6 +24,7 @@ class DirectorsController < ApplicationController
   def show
     @director = Director.find(params[:id])
     @genre = Genre.find(@director.genre_id)
+    @movies = Movie.where(director_id: @director.id).order(:year)
   end
 
   def edit
