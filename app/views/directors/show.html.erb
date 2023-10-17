@@ -1,0 +1,12 @@
+<dl>
+  <dt><h1><%= @director.name %></h1></dt>
+  <dd>Nacionalidade: <%= @director.nationality %></dd>
+  <dd>Data de nascimento: <%= @director.date_of_birth.strftime("%d/%m/%Y") %></dd>
+  <dd>Gênero favorito: <%= @genre.name %></dd>
+</dl>
+<%= link_to("Editar", edit_director_path) %>
+
+<h2>Filmografia</h2>
+<ul>
+
+</ul>

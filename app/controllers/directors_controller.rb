@@ -10,14 +10,34 @@ class DirectorsController < ApplicationController
   def create
     @director = Director.new(params.require(:director)
                                    .permit(:name,
-                                           :nationality,
-                                           :date_of_birth,
-                                           :genre_id))
+                                     :nationality,
+                                     :date_of_birth,
+                                     :genre_id))
 
     if @director.save
-      redirect_to directors_path
+      redirect_to director_path(@director)
     else
       render :new
     end
+  end
+
+  def show
+    @director = Director.find(params[:id])
+    @genre = Genre.find(@director.genre_id)
+  end
+
+  def edit
+    @director = Director.find(params[:id])
+  end
+
+  def update
+    director = Director.find(params[:id])
+                       .update(params
+                                 .require(:director)
+                                 .permit(:name,
+                                         :nationality,
+                                         :date_of_birth,
+                                         :genre_id))
+    redirect_to director_path
   end
 end
