@@ -7,6 +7,9 @@
     <li>
       <%= link_to("#{movie.title} (#{movie.year})", movie_path(movie))  %>
     </li>
+    <% if movie.image.attached? %>
+      <%= image_tag(movie.image_as_icon) %> <br>
+    <% end %>
   <% end %>
 </ul>
 

@@ -17,7 +17,8 @@ class MoviesController < ApplicationController
                                     :duration,
                                     :director_id,
                                     :genre_id,
-                                    :released))
+                                    :released,
+                                    :image))
     movie.save
     redirect_to movie_path(movie)
   end
@@ -42,7 +43,8 @@ class MoviesController < ApplicationController
                                :duration,
                                :director_id,
                                :genre_id,
-                               :released))
+                               :released,
+                               :image))
     redirect_to movie_path(movie)
   end
 end

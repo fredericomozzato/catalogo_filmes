@@ -1,21 +1,30 @@
+
+
 <dl>
   <dt>
     <h1><%= @movie.title %></h1>
   </dt>
+
+  <% if @movie.image.attached? %>
+    <dd>
+      <%= image_tag(@movie.image_as_thumbnail) %>
+    </dd>
+  <% end %>
+
   <dd>
-    Diretor: <%= @director.name %>
+    <b>Diretor: </b><%= @director.name %>
   </dd>
   <dd>
-    Ano de lançamento: <%= @movie.released ? @movie.year : "Previsão para #{@movie.year}" %>
+    <b>Ano: </b><%= @movie.released ? @movie.year : "Previsão para #{@movie.year}" %>
   </dd>
   <dd>
-    Duração: <%= @movie.duration %> minutos
+    <b>Duração: </b><%= @movie.duration %> minutos
   </dd>
   <dd>
-    Gênero: <%= @genre.name %>
+    <b>Gênero: </b><%= @genre.name %>
   </dd>
   <dd>
-    Sinopse: <%= @movie.synopsis %>
+    <b>Sinopse: </b><%= @movie.synopsis %>
   </dd>
 </dl>
 

@@ -32,7 +32,17 @@
     <%= f.check_box(:released) %>
   </div>
   <div>
+    <%= f.label(:image, "Adicionar poster: ") %>
+    <%= f.file_field(:image) %>
+  </div>
+  <div>
+    <% if movie.image.attached? %>
+      <%= image_tag(movie.image_as_icon) %>
+    <% end %>
+  </div>
+  <div>
     <%= f.submit("Salvar") %>
   </div>
 
 <% end %>
+
