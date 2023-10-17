@@ -1,0 +1,19 @@
+<%= form_with(model: director) do |f| %>
+  <div>
+    <%= f.label(:name, "Nome: ") %>
+    <%= f.text_field(:name) %>
+  </div>
+  <div>
+    <%= f.label(:nationality, "Nacionalidade: ") %>
+    <%= f.text_field(:nationality) %>
+  </div>
+  <div>
+    <%= f.label(:date_of_birth, "Data de nascimento: ") %>
+    <%= f.date_field(:date_of_birth) %>
+  </div>
+  <div>
+    <%= f.label(:genre, "Gênero favorito: ") %>
+    <%= f.collection_select(:genre_id, Genre.all.order(:name), :id, :name) %>
+  </div>
+  <%= f.submit("Salvar") %>
+<% end %>
