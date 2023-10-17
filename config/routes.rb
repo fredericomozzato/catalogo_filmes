@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "main#index"
+  root "movies#index"
   resources(:genres)
   resources(:directors)
   resources(:movies)

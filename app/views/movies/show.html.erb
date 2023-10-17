@@ -1,0 +1,23 @@
+<dl>
+  <dt>
+    <h1><%= @movie.title %></h1>
+  </dt>
+  <dd>
+    Diretor: <%= @director.name %>
+  </dd>
+  <dd>
+    Ano de lançamento: <%= @movie.year %>
+  </dd>
+  <dd>
+    Duração: <%= @movie.duration %> minutos
+  </dd>
+  <dd>
+    Gênero: <%= @genre.name %>
+  </dd>
+  <dd>
+    Sinopse: <%= @movie.synopsis %>
+  </dd>
+</dl>
+
+<%= link_to("Editar", edit_movie_path(@movie)) %>
+
