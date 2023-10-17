@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all.order(:name)
+    @movies = Movie.where(released: true).order(:name)
+    @unreleased = Movie.where(released: false).order(:name)
   end
 
   def new
@@ -15,7 +16,8 @@ class MoviesController < ApplicationController
                                     :year,
                                     :duration,
                                     :director_id,
-                                    :genre_id))
+                                    :genre_id,
+                                    :released))
     movie.save
     redirect_to movie_path(movie)
   end
@@ -39,7 +41,8 @@ class MoviesController < ApplicationController
                                :year,
                                :duration,
                                :director_id,
-                               :genre_id))
+                               :genre_id,
+                               :released))
     redirect_to movie_path(movie)
   end
 end

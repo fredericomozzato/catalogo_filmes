@@ -6,7 +6,7 @@
     Diretor: <%= @director.name %>
   </dd>
   <dd>
-    Ano de lançamento: <%= @movie.year %>
+    Ano de lançamento: <%= @movie.released ? @movie.year : "Previsão para #{@movie.year}" %>
   </dd>
   <dd>
     Duração: <%= @movie.duration %> minutos

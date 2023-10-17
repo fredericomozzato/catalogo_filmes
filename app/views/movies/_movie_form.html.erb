@@ -28,6 +28,10 @@
     <%= f.collection_select(:genre_id, Genre.all.order(:name), :id, :name) %>
   </div>
   <div>
+    <%= f.label(:released, "Lançado: ") %>
+    <%= f.check_box(:released) %>
+  </div>
+  <div>
     <%= f.submit("Salvar") %>
   </div>
 

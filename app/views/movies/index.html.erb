@@ -1,4 +1,4 @@
-<h1>Catálogo de filmes</h1>
+<h1>Filmes</h1>
 
 <h3><%= link_to("Cadastrar novo filme", new_movie_path) %></h3>
 
@@ -6,6 +6,15 @@
   <% @movies.each do |movie| %>
     <li>
       <%= link_to("#{movie.title} (#{movie.year})", movie_path(movie))  %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Não lançados</h3>
+<ul>
+  <% @unreleased.each do |movie| %>
+    <li>
+      <%= link_to("#{movie.title} (#{movie.year})", movie_path(movie)) %>
     </li>
   <% end %>
 </ul>
